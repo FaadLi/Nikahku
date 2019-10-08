@@ -1,0 +1,30 @@
+
+/* Kotak-Kotak */
+.size{
+    height:200px;
+    text-align: center;
+    
+}
+.size2{
+    height:430px;
+    text-align: center;
+}
+.space{
+    margin-top:30px;
+}
+
+/* Footer */
+.footer {
+
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: black;
+    /* text-align: center; */
+    margin-top:70px;
+    margin-bottom:-10px;
+    }
+.footer-address {
+    display: inline;
+    font-style: normal
+}
