@@ -15,16 +15,29 @@
 
 		<!-- Custom -->
 		<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/custom/home.css">
+
+		<style >
+		.background{
+			background: #ff9999; 
+			font-size: 14px; 
+			background-image: url(<?=base_url()?>assets/image/background.jpeg); 
+			background-position: center;
+			/* background-repeat: no-repeat; //gambar hanya 1 */
+			/* background-attachment: fixed; //gambar tidak berubah */
+			background-size: cover;
+			position: relative;
+		}
+		</style>
 		
 	</head>
 
 
-	<body style="background: #ff9999; font-size: 14px;">
+	<body class="background">
 		
 		<br><br><br>
 		<div class="container">
 
-			<div class="row" style="align:center">
+			<div class="row">
 				<div class="col-8" >
 					<!-- <div class="col border card size" > -->
 					<a href="#"><img src="<?=base_url()?>assets/image/dekorasi.png" class="col card size" alt="Catering" ></a>
@@ -44,7 +57,7 @@
 			<div class="row">
 				<div class="col-4 ">
 					<!-- <div class="row-1 border card size2 space"> -->
-					<img src="<?=base_url()?>assets/image/pakaian.png" class="col card size2 space" alt="Pakaian" >
+					<img src="<?=base_url()?>assets/image/pakaian.png" class="col  size2 space" alt="Pakaian" >
 						
 					<!-- </div> -->
 				</div>
@@ -68,7 +81,7 @@
 		</div>
 
 
-	
+
 		<!-- Bootstrap JavaScript -->
 		<script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>	
 

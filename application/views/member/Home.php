@@ -60,7 +60,8 @@
           </li>
           <hr><hr>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#" >Logout</a>
+            <!-- <a class="nav-link js-scroll-trigger" href="#" >Logout</a> -->
+            <a class="nav-link js-scroll-trigger" href="<?php echo site_url() ?>/CLogin/">Logout</a>
           </li>
         </ul>
       </div>
