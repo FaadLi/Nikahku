@@ -27,6 +27,12 @@
         <input type="text" id="username2" class="form-control" minlength="3" placeholder="Nama Kategori"required="" >
       <div class="invalid-feedback">Wedding Organizer</div>
     </div>
+    <div class="form-group col-lg-7">
+      <label>Tambah Keterangan</label>
+        <textarea type="textarea" id="" class="form-control" minlength="8" placeholder="Keterangan"required="" >
+        </textarea>
+      <div class="invalid-feedback">Keterangan</div>
+    </div>
     <div class="form-group col-lg-8">
       <label> Image</label>
       <input type="file" class="form-control-file border" name="file" data-toggle="tooltip" title="Fungsi Belum Bisa">
