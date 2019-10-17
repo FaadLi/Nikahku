@@ -1,27 +1,44 @@
-<script type="text/javascript">
-      
-      // Menu Membernya
+    <script type="text/javascript">
+
+      // Menu Member sidebar
       document.getElementById("home").addEventListener("click",home);
       document.getElementById("profil").addEventListener("click",profil);
       document.getElementById("kategori").addEventListener("click",kategori);
+      document.getElementById("datatabel").addEventListener("click",datatabel);
 
       function home(){
         document.getElementById("homev").style.display="";
         document.getElementById("profilv").style.display="none";
         document.getElementById("kategoriv").style.display="none";
+        document.getElementById("datatabelv").style.display="none";
       }
       function profil(){
         document.getElementById("homev").style.display="none";
         document.getElementById("profilv").style.display="";
         document.getElementById("kategoriv").style.display="none";
+        document.getElementById("datatabelv").style.display="none";
       }
       
       function kategori(){
         document.getElementById("homev").style.display="none";
         document.getElementById("profilv").style.display="none";
         document.getElementById("kategoriv").style.display="";
+        document.getElementById("datatabelv").style.display="none";
       }
-      //End Menu Membernya
+      function datatabel(){
+        document.getElementById("homev").style.display="none";
+        document.getElementById("profilv").style.display="none";
+        document.getElementById("kategoriv").style.display="none";
+        document.getElementById("datatabelv").style.display="block";
+
+      }
+      //End Menu Member sidebar
+
+
+
+      
+      
+      
 
       
 
