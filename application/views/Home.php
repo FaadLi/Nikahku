@@ -27,12 +27,25 @@
 			background-size: cover;
 			position: relative;
 		}
+		img {
+			 /* border: 1px solid #ddd; */
+			/* border-radius: 4px; */
+			/* padding: 5px; */
+			/* width: 150px; */
+		}
+
+		img:hover {
+			box-shadow: 0 0 20px 1px rgba(0, 140, 186, 0.5);
+		}
+		.pading {
+			padding : 30px;
+		}
 		</style>
 		
 	</head>
 
 
-	<body class="background">
+	<body class="background pading">
 		
 		<br><br><br>
 		<div class="container">
@@ -40,7 +53,7 @@
 			<div class="row">
 				<div class="col-8" >
 					<!-- <div class="col border card size" > -->
-					<a href="#"><img src="<?=base_url()?>assets/image/dekorasi.png" class="col card size" alt="Catering" ></a>
+					<a href="#"><img src="<?=base_url()?>assets/image/dekorasi.png" class="col size" alt="Catering" ></a>
 						
 						
 					<!-- </div> -->
@@ -48,7 +61,7 @@
 				<div class="col" >
 					<!-- <div class="col border card size" > -->
 					
-					<a href="#"><img src="<?=base_url()?>assets/image/catering.png" class="col card size" alt="Catering" > </a>
+					<a href="#"><img src="<?=base_url()?>assets/image/catering.png" class="col size" alt="Catering" > </a>
 					<!-- <img src="<?=base_url()?>assets/image/catering.png" class="img-thumbnail col border size" alt="Catering" >  -->
 					<!-- </div> -->
 				</div>
@@ -57,7 +70,7 @@
 			<div class="row">
 				<div class="col-4 ">
 					<!-- <div class="row-1 border card size2 space"> -->
-					<img src="<?=base_url()?>assets/image/pakaian.png" class="col  size2 space" alt="Pakaian" >
+					<a href="#"><img src="<?=base_url()?>assets/image/pakaian.png" class="col  size2 space" alt="Pakaian" ></a>
 						
 					<!-- </div> -->
 				</div>
@@ -66,15 +79,15 @@
 						LOGO Website
 					</div>
 					<!-- <div class="col border card size space"> -->
-					<img src="<?=base_url()?>assets/image/souvenir.png" class="col card size space" alt="Souvenir" >
+					<a href="#"><img src="<?=base_url()?>assets/image/souvenir.png" class="col  size space" alt="Souvenir" ></a>
 					<!-- </div> -->
 				</div>
 				<div class="col">
 					<!-- <div class="col border card size space"> -->
-					<img src="<?=base_url()?>assets/image/undangan.png" class="col card size space" alt="Undangan" >
+					<a href="#"><img src="<?=base_url()?>assets/image/undangan.png" class="col  size space" alt="Undangan" ></a>
 					<!-- </div> -->
 					<!-- <div class="col border card size space"> -->
-					<img src="<?=base_url()?>assets/image/dokumentasi.png" class="col card size space" alt="Dokumentasi" >
+					<a href="#"><img src="<?=base_url()?>assets/image/dokumentasi.png" class="col  size space" alt="Dokumentasi" ></a>
 					<!-- </div> -->
 				</div>
 			</div>

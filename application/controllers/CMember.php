@@ -37,11 +37,42 @@ class CMember extends CI_Controller {
 		$this->load->view('member/Footer');
 	}
 	// Mendapatkan data Kategori dari database
-
+	
+	// DEKORASI
 	public function getDekorasi(){
 		$data= $this->kategori_model->get_all_dekorasi();
 		echo json_encode($data);
 	}
+	public function createDekorasi()
+	{
+        // id_member
+        // nama
+        // keterangan 
+        // harga
+        // kat_warna
+		// kat_jenis
+
+		// $tabel = "dekorasi";
+		// $id_member = "9";
+		// $nama = "coba2";
+		// $keterangan = "ini keterangan ke 2";
+		// $harga = 9999;
+		// $kat_warna = 2;
+		// $kat_jenis = 2;
+
+		$tabel =$this->input->post('tabel');
+		$id_member = "9";
+		$nama = $this->input->post('nama');
+		$keterangan = $this->input->post('keterangan');
+		$harga = $this->input->post('harga');
+		$kat_warna = $this->input->post('kat_warna');
+		$kat_jenis = $this->input->post('kat_jenis');
+
+		$result = $this->kategori_model->create_dekorasi($tabel,$id_member,$nama,$keterangan,$harga,$kat_warna,$kat_jenis);
+		echo json_encode($result);
+		// echo json_encode($tabel);
+	}
+
 	public function getPakaian(){
 		$data= $this->kategori_model->get_all_pakaian();
 		echo json_encode($data);

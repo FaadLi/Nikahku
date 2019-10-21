@@ -38,18 +38,18 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" id="home" href="#" >Home </a>
+            <a class="nav-link js-scroll-trigger" id="home" href="javascript:void(0)" >Home </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" id="profil" href="#">Profil</a>
+            <a class="nav-link js-scroll-trigger" id="profil" href="javascript:void(0)">Profil</a>
           </li>
           
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" id="kategori" href="#" >Tambah Kategori</a>
+            <a class="nav-link js-scroll-trigger" id="kategori" href="javascript:void(0)" >Tambah Kategori</a>
           </li >
           <hr>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" id="datatabel" href="#" >DATA TABEL</a>
+            <a class="nav-link js-scroll-trigger" id="datatabel" href="javascript:void(0)" >DATA TABEL</a>
           </li >
           <hr><hr>
           <li class="nav-item">
