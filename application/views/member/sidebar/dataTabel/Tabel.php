@@ -1,4 +1,26 @@
-
+<!--MODAL DELETE-->
+<form>
+    <div class="modal fade" id="Modal_Delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Hapus Dekorasi</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>			           
+        </div>
+        <div class="modal-body">
+            <strong id="namaUser"> Nama User </strong>
+            
+        </div>
+        <div class="modal-footer">
+            <input type="hidden" name="id_dekor" id="id_dekor" class="form-control">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+            <button type="button" type="submit" id="btn_delete" class="btn btn-danger">Yes</button>
+        </div>
+        </div>
+    </div>
+    </div>
+</form>
+<!--END MODAL DELETE-->
 
 <!-- START DEKORASI -->
 <div class="container" id="dekorasiv" style="display:block">
@@ -12,12 +34,15 @@
                 <th>Kategori Warna</th>
                 <th>Kategori Jenis</th>
                 <th>Foto</th>
+                <th>Opsi</th>
+                
             </tr>
         </thead>
         <tbody id="show_dekor">
         
         </tbody>
     </table>
+
 
 
     <script type="text/javascript" >
@@ -43,6 +68,7 @@
                         $('<td>').text(data[i].kat_warna),
                         $('<td>').text(data[i].kat_jenis),
                         $('<td>').text(data[i].image),
+                        $('<td>').html('<a href="javascript:void(0);" class="btn btn-danger item_delete" data-id="'+data[i].id+'"data-nama="'+data[i].nama+'">Hapus</a>')
                     );
                     tr.appendTo('#show_dekor');
                     
@@ -56,8 +82,57 @@
                 }
                 });
             }
+            
+            // DELETE USER
+            $('#show_dekor').on('click','.item_delete',function(){
+                //  alert("TES");
+                //  alert($(this).data('username'));
+
+                //  Mengambil data json dari array
+                var id = $(this).data('id');
+                var nama = $(this).data('nama');
+                 
+                
+                $('#Modal_Delete').modal('show');
+                document.getElementById("namaUser").innerHTML=" Apakah anda yakin ingin menghapus '"+nama+"' ? ";
+                
+                
+                $('[name="id_dekor"]').val(id);
+            });
+            //delete record to database
+             $('#btn_delete').on('click',function(){
+                var id_dekor = $('#id_dekor').val();
+                
+                console.log(id_dekor);
+                $.ajax({
+                    type : "POST",
+                    url  : "<?php echo site_url(); ?>/CMember/deleteDekorasi",
+                    dataType : "JSON",
+                    data : {id:id_dekor,
+                            tabelDb:tabelDb},
+
+                    success: function(data){
+                        console.log("berhasil");
+                        $('[name="id_dekor"]').val("");
+                        $('#Modal_Delete').modal('hide');
+                        
+                       refresh();
+                        
+                        // location.reload();
+                    }
+                });
+                return false;
+            });
+            //END DELETE USER
+
+            function refresh() {
+            $('#mydata').DataTable().destroy();
+            $('#show_dekor').empty();
+            
+            show();
+            } 
         });
-</script>
+    </script>
 </div>
 <!-- END DEKORASI -->
 
@@ -116,6 +191,54 @@
                 }
                 });
             }
+            // DELETE USER
+            $('#show_dekor').on('click','.item_delete',function(){
+                //  alert("TES");
+                //  alert($(this).data('username'));
+
+                //  Mengambil data json dari array
+                var id = $(this).data('id');
+                var nama = $(this).data('nama');
+                 
+                
+                $('#Modal_Delete').modal('show');
+                document.getElementById("namaUser").innerHTML=" Apakah anda yakin ingin menghapus '"+nama+"' ? ";
+                
+                
+                $('[name="id_dekor"]').val(id);
+            });
+            //delete record to database
+             $('#btn_delete').on('click',function(){
+                var id_dekor = $('#id_dekor').val();
+                
+                console.log(id_dekor);
+                $.ajax({
+                    type : "POST",
+                    url  : "<?php echo site_url(); ?>/CMember/deleteDekorasi",
+                    dataType : "JSON",
+                    data : {id:id_dekor,
+                            tabelDb:tabelDb},
+
+                    success: function(data){
+                        console.log("berhasil");
+                        $('[name="id_dekor"]').val("");
+                        $('#Modal_Delete').modal('hide');
+                        
+                       refresh();
+                        
+                        // location.reload();
+                    }
+                });
+                return false;
+            });
+            //END DELETE USER
+
+            function refresh() {
+            $("#mydata").DataTable().destroy();
+            $('#show_dekor').empty();
+            
+            show();
+            } 
         });
     </script>
 </div>
@@ -176,6 +299,54 @@
                 }
                 });
             }
+            // DELETE USER
+            $('#show_dekor').on('click','.item_delete',function(){
+                //  alert("TES");
+                //  alert($(this).data('username'));
+
+                //  Mengambil data json dari array
+                var id = $(this).data('id');
+                var nama = $(this).data('nama');
+                 
+                
+                $('#Modal_Delete').modal('show');
+                document.getElementById("namaUser").innerHTML=" Apakah anda yakin ingin menghapus '"+nama+"' ? ";
+                
+                
+                $('[name="id_dekor"]').val(id);
+            });
+            //delete record to database
+             $('#btn_delete').on('click',function(){
+                var id_dekor = $('#id_dekor').val();
+                
+                console.log(id_dekor);
+                $.ajax({
+                    type : "POST",
+                    url  : "<?php echo site_url(); ?>/CMember/deleteDekorasi",
+                    dataType : "JSON",
+                    data : {id:id_dekor,
+                            tabelDb:tabelDb},
+
+                    success: function(data){
+                        console.log("berhasil");
+                        $('[name="id_dekor"]').val("");
+                        $('#Modal_Delete').modal('hide');
+                        
+                       refresh();
+                        
+                        // location.reload();
+                    }
+                });
+                return false;
+            });
+            //END DELETE USER
+
+            function refresh() {
+            $("#mydata").DataTable().destroy();
+            $('#show_dekor').empty();
+            
+            show();
+            } 
         });
     </script>
 </div>
@@ -235,6 +406,54 @@
                 }
                 });
             }
+            // DELETE USER
+            $('#show_dekor').on('click','.item_delete',function(){
+                //  alert("TES");
+                //  alert($(this).data('username'));
+
+                //  Mengambil data json dari array
+                var id = $(this).data('id');
+                var nama = $(this).data('nama');
+                 
+                
+                $('#Modal_Delete').modal('show');
+                document.getElementById("namaUser").innerHTML=" Apakah anda yakin ingin menghapus '"+nama+"' ? ";
+                
+                
+                $('[name="id_dekor"]').val(id);
+            });
+            //delete record to database
+             $('#btn_delete').on('click',function(){
+                var id_dekor = $('#id_dekor').val();
+                
+                console.log(id_dekor);
+                $.ajax({
+                    type : "POST",
+                    url  : "<?php echo site_url(); ?>/CMember/deleteDekorasi",
+                    dataType : "JSON",
+                    data : {id:id_dekor,
+                            tabelDb:tabelDb},
+
+                    success: function(data){
+                        console.log("berhasil");
+                        $('[name="id_dekor"]').val("");
+                        $('#Modal_Delete').modal('hide');
+                        
+                       refresh();
+                        
+                        // location.reload();
+                    }
+                });
+                return false;
+            });
+            //END DELETE USER
+
+            function refresh() {
+            $("#mydata").DataTable().destroy();
+            $('#show_dekor').empty();
+            
+            show();
+            } 
         });
     </script>
 </div>
@@ -295,6 +514,54 @@
                 }
                 });
             }
+            // DELETE USER
+            $('#show_dekor').on('click','.item_delete',function(){
+                //  alert("TES");
+                //  alert($(this).data('username'));
+
+                //  Mengambil data json dari array
+                var id = $(this).data('id');
+                var nama = $(this).data('nama');
+                 
+                
+                $('#Modal_Delete').modal('show');
+                document.getElementById("namaUser").innerHTML=" Apakah anda yakin ingin menghapus '"+nama+"' ? ";
+                
+                
+                $('[name="id_dekor"]').val(id);
+            });
+            //delete record to database
+             $('#btn_delete').on('click',function(){
+                var id_dekor = $('#id_dekor').val();
+                
+                console.log(id_dekor);
+                $.ajax({
+                    type : "POST",
+                    url  : "<?php echo site_url(); ?>/CMember/deleteDekorasi",
+                    dataType : "JSON",
+                    data : {id:id_dekor,
+                            tabelDb:tabelDb},
+
+                    success: function(data){
+                        console.log("berhasil");
+                        $('[name="id_dekor"]').val("");
+                        $('#Modal_Delete').modal('hide');
+                        
+                       refresh();
+                        
+                        // location.reload();
+                    }
+                });
+                return false;
+            });
+            //END DELETE USER
+
+            function refresh() {
+            $("#mydata").DataTable().destroy();
+            $('#show_dekor').empty();
+            
+            show();
+            } 
         });
     </script>
 </div>
@@ -355,6 +622,55 @@
                 }
                 });
             }
+            // DELETE USER
+            $('#show_dekor').on('click','.item_delete',function(){
+                //  alert("TES");
+                //  alert($(this).data('username'));
+
+                //  Mengambil data json dari array
+                var id = $(this).data('id');
+                var nama = $(this).data('nama');
+                 
+                
+                $('#Modal_Delete').modal('show');
+                document.getElementById("namaUser").innerHTML=" Apakah anda yakin ingin menghapus '"+nama+"' ? ";
+                
+                
+                $('[name="id_dekor"]').val(id);
+            });
+            //delete record to database
+             $('#btn_delete').on('click',function(){
+                var id_dekor = $('#id_dekor').val();
+                
+                console.log(id_dekor);
+                $.ajax({
+                    type : "POST",
+                    url  : "<?php echo site_url(); ?>/CMember/deleteDekorasi",
+                    dataType : "JSON",
+                    data : {id:id_dekor,
+                            tabelDb:tabelDb},
+
+                    success: function(data){
+                        console.log("berhasil");
+                        $('[name="id_dekor"]').val("");
+                        $('#Modal_Delete').modal('hide');
+                        
+                       refresh();
+                        
+                        // location.reload();
+                    }
+                });
+                return false;
+            });
+            //END DELETE USER
+
+            function refresh() {
+            $("#mydata").DataTable().destroy();
+            $('#show_dekor').empty();
+            
+            show();
+            } 
+            
         });
     </script>
 </div>

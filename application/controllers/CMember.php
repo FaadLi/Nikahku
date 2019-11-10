@@ -72,6 +72,17 @@ class CMember extends CI_Controller {
 		echo json_encode($result);
 		// echo json_encode($tabel);
 	}
+	public function deleteDekorasi()
+	{
+		// $id = 17;
+		$id 	= $this->input->post('id');
+		$tabel 	= $this->input->post('tabelDb');
+
+
+		$data = $this->kategori_model->delete_dekorasi($tabel,$id);
+			echo json_encode($data);
+		
+	}
 
 	public function getPakaian(){
 		$data= $this->kategori_model->get_all_pakaian();

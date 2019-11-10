@@ -37,6 +37,13 @@ class Kategori_model extends CI_Model {
         // menambahkan data
         return $this->db->insert($tabel, $data);
     }
+    public function delete_dekorasi($tabel,$id)
+    {
+        // menghapus User
+        $this->db->where('id', $id);
+        $result = $this->db->delete($tabel);
+        return $result;
+    }
 
     // MODEL PAKAIAN
     public function get_all_pakaian()

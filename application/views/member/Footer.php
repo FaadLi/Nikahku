@@ -1,5 +1,8 @@
     <script type="text/javascript">
 
+    // menambahkan variabel buat mengambil tabel Database
+    var tabelDb = "";
+
       // Menu Member sidebar
       document.getElementById("home").addEventListener("click",home);
       document.getElementById("profil").addEventListener("click",profil);
@@ -30,6 +33,11 @@
         document.getElementById("profilv").style.display="none";
         document.getElementById("kategoriv").style.display="none";
         document.getElementById("datatabelv").style.display="block";
+        
+        
+        tabelDb = "dekorasi";
+
+        console.log(tabelDb);
 
       }
       //End Menu Member sidebar

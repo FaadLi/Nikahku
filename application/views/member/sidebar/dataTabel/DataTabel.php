@@ -5,7 +5,7 @@
 
     <div class="row text-center card=header">
         <div class="col">
-            <a class="btn" id="dekorasi" href="#"> Dekorasi </a>
+            <a class="btn" id="dekorasi" value="dekorasi" href="#"> Dekorasi </a>
         </div>
         <div class="col">
             <a class="btn" id="pakaian" href="#"> Pakaian </a>
@@ -35,6 +35,9 @@
     document.getElementById("souvenir").addEventListener("click",souvenir);
     document.getElementById("catering").addEventListener("click",catering);
 
+    
+    
+
 
     function dekorasi(){
         document.getElementById("dekorasiv").style.display="block";
@@ -43,7 +46,12 @@
         document.getElementById("dokumentasiv").style.display="none";
         document.getElementById("souvenirv").style.display="none";
         document.getElementById("cateringv").style.display="none";
+        
+         tabelDb = "dekorasi";
+
+        console.log(tabelDb);
     }
+
     function pakaian(){
         
         document.getElementById("dekorasiv").style.display="none";
@@ -52,6 +60,10 @@
         document.getElementById("dokumentasiv").style.display="none";
         document.getElementById("souvenirv").style.display="none";
         document.getElementById("cateringv").style.display="none";
+
+        tabelDb = "pakaian";
+
+        console.log(tabelDb);
         
     }
 
@@ -62,6 +74,10 @@
         document.getElementById("dokumentasiv").style.display="none";
         document.getElementById("souvenirv").style.display="none";
         document.getElementById("cateringv").style.display="none";
+
+        tabelDb = "undangan";
+
+        console.log(tabelDb);
     }
     function dokumentasi(){
         document.getElementById("dekorasiv").style.display="none";
@@ -70,6 +86,10 @@
         document.getElementById("dokumentasiv").style.display="";
         document.getElementById("souvenirv").style.display="none";
         document.getElementById("cateringv").style.display="none";
+
+        tabelDb = "dokumentasi";
+
+        console.log(tabelDb);
     }
     function souvenir(){
         document.getElementById("dekorasiv").style.display="none";
@@ -78,6 +98,10 @@
         document.getElementById("dokumentasiv").style.display="none";
         document.getElementById("souvenirv").style.display="";
         document.getElementById("cateringv").style.display="none";
+
+        tabelDb = "souvenir";
+
+        console.log(tabelDb);
     }
     function catering(){
         document.getElementById("dekorasiv").style.display="none";
@@ -86,5 +110,9 @@
         document.getElementById("dokumentasiv").style.display="none";
         document.getElementById("souvenirv").style.display="none";
         document.getElementById("cateringv").style.display="";
+
+        tabelDb = "catering";
+
+        console.log(tabelDb);
     }
 </script>
