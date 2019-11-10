@@ -30,25 +30,25 @@
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" name="" class="form-control input_user" value="" placeholder="username">
+							<input type="text" id="login" name="" class="form-control input_user" value="" placeholder="username">
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" name="" class="form-control input_pass" value="" placeholder="password">
+							<input type="password" id="password" name="" class="form-control input_pass" value="" placeholder="password">
 						</div>
 						<!-- <div class="form-group">
 							<div class="custom-control custom-checkbox">
 								<input type="checkbox" class="custom-control-input" id="customControlInline">
-								<label class="custom-control-label" for="customControlInline">Remember me</label>
+								<label class="custom-control-label" for<?php echo site_url() ?>/CMember/="customControlInline">Remember me</label>
 							</div>
 						</div> -->
 					</form>
 				</div>
 				<div class="d-flex justify-content-center mt-3 login_container">
-					<!-- <button type="button" name="button" class="btn login_btn">Login</button> -->
-                    <a class="btn login_btn" href="<?php echo site_url() ?>/CMember/">Login</a>
+					<input type="button" name="button" id="goButton" class="btn login_btn" onclick="checkLoginPass()" value="Log In">
+                    <!-- <a class="btn login_btn" href="<?php echo site_url() ?>/CMember/">Login</a> -->
 				</div>
 				<div class="mt-4">
 					<!-- <div class="d-flex justify-content-center links">
@@ -61,5 +61,23 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+		var checkLoginPass = function () {
+			var login = document.getElementById("login").value;
+			var pass = document.getElementById("password").value;
+			if (login === "admin" && pass === "admin") {
+				console.log("masuk");
+				alert("Selamat Datang");
+				location.replace("<?php echo site_url() ?>/CMember/");
+				
+			}
+			else {
+				//do something else;
+				console.log("tidak");
+				alert("Username atau Password yang dimasukkan salah");
+			}
+		};
+	</script>
+
 </body>
 </html>
