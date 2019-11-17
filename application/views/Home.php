@@ -53,7 +53,7 @@
 			<div class="row">
 				<div class="col-8" >
 					<!-- <div class="col border card size" > -->
-					<a href="#"><img src="<?=base_url()?>assets/image/dekorasi.png" class="col size" alt="Catering" ></a>
+					<a href="<?=base_url()?>index.php/CHome/kategori/dekorasi"><img src="<?=base_url()?>assets/image/dekorasi.png" class="col size" alt="Catering" ></a>
 						
 						
 					<!-- </div> -->
@@ -61,7 +61,7 @@
 				<div class="col" >
 					<!-- <div class="col border card size" > -->
 					
-					<a href="#"><img src="<?=base_url()?>assets/image/catering.png" class="col size" alt="Catering" > </a>
+					<a href="<?=base_url()?>index.php/CHome/kategori/catering"><img src="<?=base_url()?>assets/image/catering.png" class="col size" alt="Catering" > </a>
 					<!-- <img src="<?=base_url()?>assets/image/catering.png" class="img-thumbnail col border size" alt="Catering" >  -->
 					<!-- </div> -->
 				</div>
@@ -70,7 +70,7 @@
 			<div class="row">
 				<div class="col-4 ">
 					<!-- <div class="row-1 border card size2 space"> -->
-					<a href="#"><img src="<?=base_url()?>assets/image/pakaian.png" class="col  size2 space" alt="Pakaian" ></a>
+					<a href="<?=base_url()?>index.php/CHome/kategori/pakaian"><img src="<?=base_url()?>assets/image/pakaian.png" class="col  size2 space" alt="Pakaian" ></a>
 						
 					<!-- </div> -->
 				</div>
@@ -79,15 +79,15 @@
 						LOGO Website
 					</div>
 					<!-- <div class="col border card size space"> -->
-					<a href="#"><img src="<?=base_url()?>assets/image/souvenir.png" class="col  size space" alt="Souvenir" ></a>
+					<a href="<?=base_url()?>index.php/CHome/kategori/souvenir"><img src="<?=base_url()?>assets/image/souvenir.png" class="col  size space" alt="Souvenir" ></a>
 					<!-- </div> -->
 				</div>
 				<div class="col">
 					<!-- <div class="col border card size space"> -->
-					<a href="#"><img src="<?=base_url()?>assets/image/undangan.png" class="col  size space" alt="Undangan" ></a>
+					<a href="<?=base_url()?>index.php/CHome/kategori/undangan"><img src="<?=base_url()?>assets/image/undangan.png" class="col  size space" alt="Undangan" ></a>
 					<!-- </div> -->
 					<!-- <div class="col border card size space"> -->
-					<a href="#"><img src="<?=base_url()?>assets/image/dokumentasi.png" class="col  size space" alt="Dokumentasi" ></a>
+					<a href="<?=base_url()?>index.php/CHome/kategori/dokumentasi"><img src="<?=base_url()?>assets/image/dokumentasi.png" class="col  size space" alt="Dokumentasi" ></a>
 					<!-- </div> -->
 				</div>
 			</div>

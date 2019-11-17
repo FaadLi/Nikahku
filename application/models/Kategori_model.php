@@ -8,6 +8,17 @@ class Kategori_model extends CI_Model {
     	parent::__construct();
     }
 
+    public function get_kategori($tabel)
+    {
+        // Urutkan berdasar abjad
+        $this->db->order_by('id',);
+
+        $tabel = $tabel;
+
+        $query = $this->db->get($tabel);
+        return $query->result();
+    }
+
     // MODEL DEKORASI
     public function get_all_dekorasi()
     {

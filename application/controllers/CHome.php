@@ -13,14 +13,17 @@ class CHome extends CI_Controller {
 
 	public function index()
 	{
-		// $this->load->view('Home');
-		$this->load->view('Kategori');
+		$this->load->view('Home');
+		// $this->load->view('Kategori');
 	}
-	public function kategori() 
+	public function kategori($tabel) 
 	{
 
-		// Dapatkan semua kategori
-		$data['categories'] = $this->kategori_model->get_all_dekorasi();
+		// Dapatkan kategori
+		// $tabel = "pakaian";
+		$tabel = $tabel;
+
+		$data['categories'] = $this->kategori_model->get_kategori($tabel);
 
 
 		$this->load->view('Kategori', $data);
