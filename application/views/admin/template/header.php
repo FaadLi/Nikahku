@@ -41,7 +41,7 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li class="active has-sub">
-                            <a class="js-arrow" href="#">
+                            <a class="js-arrow" href="#" id="sb_home">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                             
                         </li>
@@ -51,13 +51,13 @@
                                 <i class="fas fa-copy"></i>Pages</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="#">Member</a>
+                                    <a href="#" id="sb_member">Member</a>
                                 </li>
                                 <li>
-                                    <a href="#">Data Kategori</a>
+                                    <a href="#" id="sb_kategori">Data Kategori</a>
                                 </li>
                                 <li>
-                                    <a href="#">Pesanan</a>
+                                    <a href="#" id="sb_pesan">Pesanan</a>
                                 </li>
                             </ul>
                         </li>

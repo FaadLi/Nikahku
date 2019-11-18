@@ -8,13 +8,38 @@ class CAdmin extends CI_Controller {
 		parent::__construct();
 
 		// Load semua model yang dipakai
-		// $this->load->model('kategori_model');
+		$this->load->model('kategori_model');
 	}
 
 	public function index()
 	{
-        $this->load->view('admin/header');
-		$this->load->view('admin/home');
 
-    }
+    $tabel = "catering";
+    $data['catering'] = $this->kategori_model->get_count_kategori($tabel);
+
+    $tabel = "dekorasi";
+    $data['dekorasi'] = $this->kategori_model->get_count_kategori($tabel);
+
+    $tabel = "undangan";
+    $data['undangan'] = $this->kategori_model->get_count_kategori($tabel);
+
+    $tabel = "pakaian";
+    $data['pakaian'] = $this->kategori_model->get_count_kategori($tabel);
+
+    $tabel = "souvenir";
+    $data['souvenir'] = $this->kategori_model->get_count_kategori($tabel);
+
+    $tabel = "dokumentasi";
+    $data['dokumentasi'] = $this->kategori_model->get_count_kategori($tabel);
+
+    $this->load->view('admin/template/header');
+    $this->load->view('admin/home',$data);
+
+    $this->load->view('admin/sidebar/dataKategori');
+    $this->load->view('admin/sidebar/dataMember');
+    $this->load->view('admin/sidebar/dataPesan');
+
+    $this->load->view('admin/template/footer');
+
+  }
 }
