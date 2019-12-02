@@ -8,14 +8,6 @@ class Kategori_model extends CI_Model {
     	parent::__construct();
     }
 
-    public function get_count_kategori($tabel){
-
-        $tabel=$tabel;
-        $query = $this->db->query("SELECT COUNT(*) as ok FROM $tabel"); 
-        $row = $query->first_row();
-        return $row;
-
-    }
     public function get_kategori($tabel)
     {
         // Urutkan berdasar abjad
