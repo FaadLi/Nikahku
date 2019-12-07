@@ -28,9 +28,8 @@
   <body id="page-top">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top" id="sideNav">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">
-          <img class="img-fluid img-profile rounded mx-auto mb-2" src="<?php echo base_url() ?>assets/admin/img/profile.jpg" alt="">
-        </span>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"> 
+          <img class="img-fluid img-profile rounded mx-auto mb-2" src="<?php echo base_url() ?>assets/admin/img/profile.jpg" alt="">   
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -40,9 +39,7 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" id="home" href="javascript:void(0)" >Home </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" id="profil" href="javascript:void(0)">Profil</a>
-          </li>
+          
           
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" id="kategori" href="javascript:void(0)" >Tambah Kategori</a>
@@ -53,8 +50,11 @@
           </li >
           <hr><hr>
           <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" id="profil" href="javascript:void(0)">Profil</a>
+          </li>
+          <li class="nav-item">
             <!-- <a class="nav-link js-scroll-trigger" href="#" >Logout</a> -->
-            <a class="nav-link js-scroll-trigger" href="<?php echo site_url() ?>/CLogin/">Logout</a>
+            <a class="nav-link js-scroll-trigger" href="<?php echo site_url() ?>/CLogin/logoutMember">Logout</a>
           </li>
         </ul>
       </div>

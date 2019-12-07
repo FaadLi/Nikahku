@@ -8,6 +8,43 @@ class Admin_model extends CI_Model {
     	parent::__construct();
     }
 
+    // Proses login user
+    public function login($nama, $password){
+        // Validasi
+        $this->db->where('nama', $nama);
+        $this->db->where('password', $password);
+
+        $result = $this->db->get('admin');
+
+        if($result->num_rows() == 1){
+            return $result->row(0)->id;
+        } else {
+            return false;
+        }
+    }
+
+    public function getData($id){
+        $this->db->select('*');
+        $this->db->from('admin');
+        $this->db->where('id',$id);
+        
+        $query = $this->db->get();
+        return $query->result();
+       }
+    function get_user_details($id)
+    {   
+        // $this->db->join('levels', 'levels.level_id = users.fk_level_id', 'left');
+        $this->db->where('id', $id);
+
+        $result = $this->db->get('admin');
+
+        if($result->num_rows() == 1){
+            return $result->row(0);
+        } else {
+            return false;
+        }
+    }
+
     public function get_count_kategori($tabel){
 
         $tabel=$tabel;

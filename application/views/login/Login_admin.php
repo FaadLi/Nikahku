@@ -11,18 +11,20 @@
             <div class="card">
                 <div class="card-body">
                     <div class="text-center">
+                    <h1 class="text-center"><?php echo $page_title; ?></h1>
                         <label>Login Admin</label>
                     </div>
-                    
-                    <form action="" autocomplete="off">
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="username" placeholder="username">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" name="password" placeholder="Password">
-                        </div>
-                        <button type="button" id="sendlogin" class="btn btn-primary">login</button>
-                    </form>
+
+                    <?php echo form_open('CLogin/loginAdmin'); ?>
+                                <div class="form-group">
+                                    <input type="text" name="username" class="form-control" placeholder="Masukkan Username" required autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="password" class="form-control" placeholder="Masukkan Password" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                            
+                    <?php echo form_close(); ?>
                 </div>
             </div>
         </div>

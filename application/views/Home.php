@@ -18,12 +18,12 @@
 
 		<style >
 		.background{
-			background: #ff9999; 
+			background: #D69D4B; 
 			font-size: 14px; 
 			background-image: url(<?=base_url()?>assets/image/background.jpeg); 
 			background-position: center;
 			/* background-repeat: no-repeat; //gambar hanya 1 */
-			/* background-attachment: fixed; //gambar tidak berubah */
+			background-attachment: fixed; //gambar tidak berubah
 			background-size: cover;
 			position: relative;
 		}
@@ -32,10 +32,13 @@
 			/* border-radius: 4px; */
 			/* padding: 5px; */
 			/* width: 150px; */
+			opacity: 0.6;
+   			filter: alpha(opacity=40); /* For IE8 and earlier */
 		}
 
 		img:hover {
 			box-shadow: 0 0 20px 1px rgba(0, 140, 186, 0.5);
+			opacity: 0.9;
 		}
 		.pading {
 			padding : 30px;
@@ -45,7 +48,7 @@
 	</head>
 
 
-	<body class="background pading">
+	<body class="background pading" style="zoom:100%">
 		
 		<br><br><br>
 		<div class="container">
@@ -53,6 +56,7 @@
 			<div class="row">
 				<div class="col-8" >
 					<!-- <div class="col border card size" > -->
+					
 					<a href="<?=base_url()?>index.php/CHome/kategori/dekorasi"><img src="<?=base_url()?>assets/image/dekorasi.png" class="col size" alt="Catering" ></a>
 						
 						

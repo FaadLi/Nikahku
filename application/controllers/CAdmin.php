@@ -14,6 +14,18 @@ class CAdmin extends CI_Controller {
 	public function index()
 	{
 
+		// Must login
+		if(!$this->session->userdata('logged_in')) 
+			redirect('CLogin/LoginAdmin');
+
+		$id = $this->session->userdata('id');
+
+		
+		// Dapatkan detail dari User
+		$data['user'] = $this->admin_model->get_user_details( $id );
+
+
+
     $tabel = "catering";
     $data['catering'] = $this->admin_model->get_count_kategori($tabel);
 
@@ -38,14 +50,14 @@ class CAdmin extends CI_Controller {
 
 		$data['categories'] = $this->admin_model->get_kategori($tabel);
 
-    $this->load->view('admin/template/header');
-    $this->load->view('admin/home',$data);
+    $this->load->view('admin/template/header',$data, FALSE);
+    $this->load->view('admin/home',$data, FALSE);
 
-    $this->load->view('admin/sidebar/dataKategori', $data);
-    $this->load->view('admin/sidebar/dataMember');
-    $this->load->view('admin/sidebar/dataPesan');
+    $this->load->view('admin/sidebar/dataKategori',$data, FALSE);
+    $this->load->view('admin/sidebar/dataMember',$data, FALSE);
+    $this->load->view('admin/sidebar/dataPesan',$data, FALSE);
 
-    $this->load->view('admin/template/footer');
+    $this->load->view('admin/template/footer',$data, FALSE);
 
   }
 

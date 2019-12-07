@@ -8,20 +8,30 @@ class CMember extends CI_Controller {
 		parent::__construct();
 		// Load custom helper applications/helpers/MY_helper.php
 		// $this->load->helper('MY');
-		$this->load->model('kategori_model');
+		$this->load->model('member_model');
 	}
 
 	public function index()
 	{
-		$this->load->view('member/sidebar/Sidebar');
-		$this->load->view('member/Home');
-		$this->load->view('member/sidebar/Profil');
-		$this->load->view('member/sidebar/Kategori');
+		// Must login
+		if(!$this->session->userdata('logged_in')) 
+			redirect('CLogin');
 
-		$this->load->view('member/sidebar/dataTabel/DataTabel');
-		$this->load->view('member/sidebar/dataTabel/Tabel');
+		$id = $this->session->userdata('id');
 
-		$this->load->view('member/Footer');
+		
+		// Dapatkan detail dari User
+		$data['user'] = $this->member_model->get_user_details( $id );
+
+		$this->load->view('member/sidebar/Sidebar',$data, FALSE);
+		$this->load->view('member/Home',$data, FALSE);
+		$this->load->view('member/sidebar/Profil',$data, FALSE);
+		$this->load->view('member/sidebar/Kategori',$data, FALSE);
+
+		$this->load->view('member/sidebar/dataTabel/DataTabel',$data, FALSE);
+		$this->load->view('member/sidebar/dataTabel/Tabel',$data, FALSE);
+
+		$this->load->view('member/Footer',$data, FALSE);
 	}
 
 	public function datatabel(){
@@ -40,7 +50,7 @@ class CMember extends CI_Controller {
 	
 	// DEKORASI
 	public function getDekorasi(){
-		$data= $this->kategori_model->get_all_dekorasi();
+		$data= $this->member_model->get_all_dekorasi();
 		echo json_encode($data);
 	}
 	public function createDekorasi()
@@ -68,7 +78,7 @@ class CMember extends CI_Controller {
 		$kat_warna = $this->input->post('kat_warna');
 		$kat_jenis = $this->input->post('kat_jenis');
 
-		$result = $this->kategori_model->create_dekorasi($tabel,$id_member,$nama,$keterangan,$harga,$kat_warna,$kat_jenis);
+		$result = $this->member_model->create_dekorasi($tabel,$id_member,$nama,$keterangan,$harga,$kat_warna,$kat_jenis);
 		echo json_encode($result);
 		// echo json_encode($tabel);
 	}
@@ -79,29 +89,29 @@ class CMember extends CI_Controller {
 		$tabel 	= $this->input->post('tabelDb');
 
 
-		$data = $this->kategori_model->delete_dekorasi($tabel,$id);
+		$data = $this->member_model->delete_dekorasi($tabel,$id);
 			echo json_encode($data);
 		
 	}
 
 	public function getPakaian(){
-		$data= $this->kategori_model->get_all_pakaian();
+		$data= $this->member_model->get_all_pakaian();
 		echo json_encode($data);
 	}
 	public function getUndangan(){
-		$data= $this->kategori_model->get_all_undangan();
+		$data= $this->member_model->get_all_undangan();
 		echo json_encode($data);
 	}
 	public function getDokumentasi(){
-		$data= $this->kategori_model->get_all_dokumentasi();
+		$data= $this->member_model->get_all_dokumentasi();
 		echo json_encode($data);
 	}
 	public function getSouvenir(){
-		$data= $this->kategori_model->get_all_souvenir();
+		$data= $this->member_model->get_all_souvenir();
 		echo json_encode($data);
 	}
 	public function getCatering(){
-		$data= $this->kategori_model->get_all_catering();
+		$data= $this->member_model->get_all_catering();
 		echo json_encode($data);
 	}
 
